@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEGEN - Sustainable Fashion Marketplace</title>
+    <style>
+        :root {
+            --primary-color: #4a6741; /* Deep green */
+            --secondary-color: #a9c25d; /* Light green */
+            --accent-color: #f3e5ab; /* Pale yellow */
+            --text-color: #333333; /* Dark gray */
+            --background-color: #f5f5f5; /* Light gray */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .product {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-left: 5px solid var(--secondary-color);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        #suggestion-box {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem;
+            margin-top: 2rem;
+            border-left: 5px solid var(--secondary-color);
+        }
+        #suggestion-box textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--secondary-color);
+        }
+        #suggestion-box button, .generate-history {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        #suggestion-box button:hover, .generate-history:hover {
+            background-color: var(--secondary-color);
+        }
+        .history-output {
+            background-color: var(--accent-color);
+            border: 1px solid var(--secondary-color);
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            min-height: 50px;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NEGEN</h1>
+        <p>Sustainable and Personalized Fashion Marketplace</p>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Welcome to NEGEN</h2>
+            <p>NEGEN is revolutionizing the fashion industry by combining sustainability, personalization, and blockchain technology. Our marketplace offers unique, eco-friendly clothing options that are tailored to your individual style and needs.</p>
+            <p>By leveraging blockchain technology, we ensure transparency in our supply chain, allowing you to trace the journey of your garments from raw materials to your closet. This innovative approach not only guarantees the authenticity and quality of our products but also promotes fair labor practices and reduces our environmental impact.</p>
+            <p>Experience fashion that's good for you and the planet. Discover NEGEN today!</p>
+        </section>
+        <section id="products">
+            <h2>Featured Products</h2>
+            <div class="product">
+                <h3>Eco-Friendly Denim Jacket</h3>
+                <button class="generate-history" onclick="generateHistory('denim-jacket')">Generate History</button>
+                <div id="denim-jacket-history" class="history-output"></div>
+                <img src="jack.jpg" alt="Eco-Friendly Denim Jacket">
+                <p>Our sustainable denim jacket is made from recycled materials and organic cotton. Each jacket is uniquely personalized using blockchain-verified eco-friendly dyes.</p>
+                <p>Price: $89.99</p>
+            </div>
+            <div class="product">
+                <h3>Customizable Organic Cotton T-Shirt</h3>
+                <button class="generate-history" onclick="generateHistory('cotton-tshirt')">Generate History</button>
+                <div id="cotton-tshirt-history" class="history-output"></div>
+                <img src="tshirt.jpg" alt="Customizable Organic Cotton T-Shirt">
+                <p>Create your own design on our 100% organic cotton t-shirts. Our blockchain-enabled platform allows you to track the entire production process of your personalized shirt.</p>
+                <p>Price: $34.99</p>
+            </div>
+        </section>
+        <section id="suggestion-box">
+            <h2>Suggest a Product or Idea</h2>
+            <p>We value your input! Please share your ideas for sustainable fashion products or any suggestions to improve our marketplace.</p>
+            <form>
+                <textarea rows="4" placeholder="Enter your suggestion here..."></textarea>
+                <button type="submit">Submit Suggestion</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        function generateHistory(productId) {
+            const histories = {
+                                'denim-jacket': [
+                "Transaction History for Hash '5f8b17000b7243f7edd452d5f52eb45b2f8fc629f519491b955347f4b1d81944'",
+                    "$2,000 sent to RecycleGreen Co. for garment recycling programs.",
+                    "$250 sent by User to GreenBrand Store for purchasing 1 sustainable T-shirt.",
+                    "Transaction History for Hash '03763cf2085123307debf9da6a2a600ce1633df0fe58f3bc7e4fc7ee57b120f1'",
+                    "$1,000 invested in eco-friendly garment care education.",
+                    "$2,000 sent to RecycleGreen Co. for garment recycling programs.",
+                    "Transaction History for Hash '53294129bb219fa23fe4a15eed2e090edd5bc108ec032a6adf883b54e2017af1'",
+                    "$5,000 sent to EcoMarket Ltd. for distribution via carbon-neutral channels.",
+                    "$1,000 invested in eco-friendly garment care education.",
+                    "Transaction History for Hash '9d708645df9e5c401be7720b2131782f923c98c39a0c94f0a379d837bb0fae94'",
+                    "$7,000 sent to GreenShip Logistics for low-emission shipping by sea.",
+                    "$5,000 sent to EcoMarket Ltd. for distribution via carbon-neutral channels.",
+                    "Transaction History for Hash '58e25fec127490ffcccee4b073293bceec83cea2405660816a06749585ad49de'",
+                    "$2,500 sent to EcoPack Co. for biodegradable packaging.",
+                    "$7,000 sent to GreenShip Logistics for low-emission shipping by sea.",
+                    "Transaction History for Hash 'acf2add9f36f12ad0e7ae4a122735d78c16b7ed26f5103b9325859d193db144a'",
+                    "$40,000 sent to FairWear Factory for 5,000 t-shirts with ethical labor.",
+                    "$2,500 sent to EcoPack Co. for biodegradable packaging.",
+                    "Transaction History for Hash '4104fab9b094b89540ab45dacd1cfaffb2ab5b974096127d4e9b2febce3a73bb'",
+                    "$18,000 sent to EarthDye Solutions for natural dyeing of fabrics.",
+                    "$40,000 sent to FairWear Factory for 5,000 t-shirts with ethical labor.",
+                    "Transaction History for Hash '7e947d977c9bae4a7a6f5172ed88affdbfb9980479f3ddbc5ab7988645a507eb'",
+                    "$25,000 sent to Green Loom Factory for fabric production using solar power.",
+                    "$18,000 sent to EarthDye Solutions for natural dyeing of fabrics.",
+                    "Transaction History for Hash '01ed60417ac402b5ebba088bd14f8ab35496065213a7c564ac5d55991bd9ac8d'",
+                    "$15,000 sent to EcoSpin Mills for eco-friendly cotton yarn.",
+                    "$25,000 sent to Green Loom Factory for fabric production using solar power.",
+                    "Transaction History for Hash '2ee26fcf2e22fd05b9fadeda30e27228c395bb6f7f66a87999c2198ffb5fe5ed'",
+                    "$50,000 sent to Green Cotton Farms Co. for 20,000 lbs of organic cotton.",
+                    "$20,000 sent to local harvesters for ethically handpicking cotton.",
+                    "Reached the last known transaction."
+
+                ],
+                'cotton-tshirt': [
+                "Organic cotton harvested in Gujarat, India",
+                    "Yarn spun in Tamil Nadu, India",
+                    "Fabric knitted in Ludhiana, India",
+                    "Garment cut and sewn in Bengaluru, India",
+                    "Eco-friendly printing done in Mumbai, India"
+
+                ]
+            };
+            
+            const historyElement = document.getElementById(productId + '-history');
+            historyElement.innerHTML = histories[productId].join('<br>');
+        }
+    </script>
+</body>
+</html>
